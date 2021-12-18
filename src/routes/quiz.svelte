@@ -23,7 +23,7 @@
 </script>
 
 <script lang="ts">
-  import type { Question } from '$lib/questions';
+  import type { Question } from '$lib/utils/questions';
   export let questions: Question[];
   let step = 1;
   let answered = false;

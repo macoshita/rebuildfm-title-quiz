@@ -1,7 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { getQuestions } from '$lib/questions';
+import { getQuestions } from '$lib/utils/questions';
 
 export const get: RequestHandler = async () => {
-  const body = await getQuestions();
-  return { body };
+  const questions = await getQuestions();
+  return { body: JSON.stringify(questions) };
 };
