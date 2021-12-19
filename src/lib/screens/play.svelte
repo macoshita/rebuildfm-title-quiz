@@ -11,29 +11,28 @@
   import { sampleSize } from 'lodash-es';
   import QuizForm from '$lib/components/quiz-form.svelte';
   export let scene: Scene;
-  let questions: Promise<Question[]> = new Promise(() => {});
+  let questions: Question[];
+  let question: Question;
+  let sentences: string[];
   let step = 1;
   let answered = false;
   let answers: string[] = [];
   let corrects: boolean[] = [];
   let isCorrect: boolean;
 
-  $: question = questions.then<ParsedQuestion>((qs) => {
-    const q = qs[step - 1];
-    return {
-      ...q,
-      sentences: q.title.split('###')
-    };
-  });
+  $: if (questions) {
+    question = questions[step - 1];
+    sentences = question.title.split('###');
+  }
 
-  onMount(() => {
-    questions = new Promise(async (resolve, reject) => {
+  let init: Promise<void> = new Promise((resolve) => {
+    onMount(async () => {
       const res = await fetch('/api/questions.json');
-      if (res.ok) {
-        resolve(sampleSize(await res.json(), 5));
-        return;
+      if (!res.ok) {
+        throw new Error('Failed to fetch questions');
       }
-      reject();
+      questions = sampleSize(await res.json(), 5);
+      resolve();
     });
   });
 
@@ -56,9 +55,9 @@
   }
 </script>
 
-{#await question}
+{#await init}
   loading...
-{:then q}
+{:then}
   {#key `step-${step}`}
     {#if answered}
       {#if isCorrect}
@@ -67,17 +66,17 @@
         <p class="wrong">Wrong...</p>
       {/if}
 
-      <p>{q.subtitle}</p>
+      <p>{question.subtitle}</p>
 
       <p>
-        {#each q.sentences as sentence, i}
+        {#each sentences as sentence, i}
           {#if i === 0}
             {sentence}
           {:else}
             {#if !corrects[i - 1]}
               <span class="wrong">{answers[i - 1]}</span>
             {/if}
-            <span class="correct">{q.answers[i - 1]}</span>
+            <span class="correct">{question.answers[i - 1]}</span>
             {sentence}
           {/if}
         {/each}
@@ -85,13 +84,11 @@
 
       <button type="button" on:click={next}>Next</button>
     {:else}
-      <QuizForm question={q} on:submit={submit} />
+      <QuizForm {question} on:submit={submit} />
     {/if}
   {/key}
-{/await}
 
-{#await questions then qs}
-  <p>{step} / {qs.length}</p>
+  <p>{step} / {questions.length}</p>
 {/await}
 
 <style>
