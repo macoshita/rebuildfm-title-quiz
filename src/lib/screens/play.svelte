@@ -9,6 +9,7 @@
   import type { Scene } from 'src/routes/index.svelte';
   import { onMount } from 'svelte';
   import { sampleSize } from 'lodash-es';
+  import QuizForm from '$lib/components/quiz-form.svelte';
   export let scene: Scene;
   let questions: Promise<Question[]> = new Promise(() => {});
   let step = 1;
@@ -36,8 +37,9 @@
     });
   });
 
-  async function submit() {
+  async function submit(event: CustomEvent<string[]>) {
     const q = await question;
+    answers = event.detail;
     corrects = q.answers.map((s, i) => s.toLowerCase() === answers[i]?.trim().toLowerCase());
 
     isCorrect = corrects.every(Boolean);
@@ -83,27 +85,7 @@
 
       <button type="button" on:click={next}>Next</button>
     {:else}
-      <form on:submit|preventDefault={submit}>
-        <p>{q.subtitle}</p>
-
-        <p>
-          {#each q.sentences as sentence, i}
-            {#if i === 0}
-              {sentence}
-            {:else}
-              <input
-                type="text"
-                name="answer[]"
-                placeholder={`(${i})`}
-                bind:value={answers[i - 1]}
-              />
-              {sentence}
-            {/if}
-          {/each}
-        </p>
-
-        <button type="submit">Answer</button>
-      </form>
+      <QuizForm question={q} on:submit={submit} />
     {/if}
   {/key}
 {/await}
