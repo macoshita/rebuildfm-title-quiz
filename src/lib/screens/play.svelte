@@ -5,7 +5,11 @@
   import QuizForm from '$lib/components/quiz-form.svelte';
   import SingleResult from '$lib/components/single-result.svelte';
   import { sample } from '$lib/utils/utils';
+
+  const QUESTION_LENGTH = 5;
+
   export let scene: Scene;
+
   let questions: Question[];
   let question: Question;
   let sentences: string[];
@@ -23,7 +27,7 @@
       if (!res.ok) {
         throw new Error('Failed to fetch questions');
       }
-      questions = sample(await res.json(), 5);
+      questions = sample(await res.json(), QUESTION_LENGTH);
       resolve();
     });
   });
