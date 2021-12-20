@@ -38,7 +38,11 @@
 
   function next() {
     answers = undefined;
-    step++;
+    if (step === questions.length) {
+      scene = 'result';
+    } else {
+      step++;
+    }
   }
 </script>
 
