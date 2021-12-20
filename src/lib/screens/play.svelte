@@ -23,11 +23,8 @@
 
   let init: Promise<void> = new Promise((resolve) => {
     onMount(async () => {
-      const res = await fetch('/api/questions.json');
-      if (!res.ok) {
-        throw new Error('Failed to fetch questions');
-      }
-      questions = sample(await res.json(), QUESTION_LENGTH);
+      const allQuestions = (await import('$lib/data/questions.json')).default;
+      questions = sample(allQuestions, QUESTION_LENGTH);
       resolve();
     });
   });
