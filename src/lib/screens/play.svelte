@@ -2,9 +2,9 @@
   import type { Question } from '$lib/utils/questions';
   import type { Scene } from 'src/routes/index.svelte';
   import { onMount } from 'svelte';
-  import { sampleSize } from 'lodash-es';
   import QuizForm from '$lib/components/quiz-form.svelte';
   import SingleResult from '$lib/components/single-result.svelte';
+  import { sample } from '$lib/utils/utils';
   export let scene: Scene;
   let questions: Question[];
   let question: Question;
@@ -23,7 +23,7 @@
       if (!res.ok) {
         throw new Error('Failed to fetch questions');
       }
-      questions = sampleSize(await res.json(), 5);
+      questions = sample(await res.json(), 5);
       resolve();
     });
   });
