@@ -1,33 +1,16 @@
 <script lang="ts">
-  import type { Question } from '$lib/utils/questions';
+  import { initPlay, questions, step } from '$lib/stores/questions';
   import type { Scene } from 'src/routes/index.svelte';
-  import { onMount } from 'svelte';
   import QuizForm from '$lib/components/quiz-form.svelte';
   import SingleResult from '$lib/components/single-result.svelte';
-  import { sample } from '$lib/utils/utils';
 
   const QUESTION_LENGTH = 5;
 
   export let scene: Scene;
 
-  let questions: Question[];
-  let question: Question;
-  let sentences: string[];
-  let step = 1;
   let answers: string[] | undefined;
 
-  $: if (questions) {
-    question = questions[step - 1];
-    sentences = question.title.split('###');
-  }
-
-  let init: Promise<void> = new Promise((resolve) => {
-    onMount(async () => {
-      const allQuestions = (await import('$lib/data/questions.json')).default;
-      questions = sample(allQuestions, QUESTION_LENGTH);
-      resolve();
-    });
-  });
+  let init: Promise<void> = initPlay(QUESTION_LENGTH);
 
   async function submit(event: CustomEvent<string[]>) {
     answers = event.detail;
@@ -35,10 +18,10 @@
 
   function next() {
     answers = undefined;
-    if (step === questions.length) {
+    if ($step === $questions.length) {
       scene = 'result';
     } else {
-      step++;
+      step.update((s) => s + 1);
     }
   }
 </script>
@@ -46,15 +29,15 @@
 {#await init}
   loading...
 {:then}
-  {#key `step-${step}`}
+  {#key `step-${$step}`}
     {#if answers}
-      <SingleResult {question} {sentences} {answers} />
+      <SingleResult {answers} />
 
       <button type="button" on:click={next}>Next</button>
     {:else}
-      <QuizForm {question} on:submit={submit} />
+      <QuizForm on:submit={submit} />
     {/if}
   {/key}
 
-  <p>{step} / {questions.length}</p>
+  <p>{$step} / {$questions.length}</p>
 {/await}

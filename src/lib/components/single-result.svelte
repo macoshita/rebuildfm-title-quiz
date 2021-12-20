@@ -1,11 +1,9 @@
 <script lang="ts">
-  import type { Question } from '$lib/utils/questions';
+  import { currentQuestion } from '$lib/stores/questions';
 
-  export let question: Question;
-  export let sentences: string[];
   export let answers: string[];
 
-  $: corrects = question.answers.map(
+  $: corrects = $currentQuestion.answers.map(
     (s, i) => s.toLowerCase() === answers[i]?.trim().toLowerCase()
   );
   $: correctAll = corrects.every(Boolean);
@@ -17,17 +15,17 @@
   <p class="wrong">Wrong...</p>
 {/if}
 
-<p>{question.subtitle}</p>
+<p>{$currentQuestion.subtitle}</p>
 
 <p>
-  {#each sentences as sentence, i}
+  {#each $currentQuestion.separatedTitle as s, i}
     {#if i > 0}
       {#if !corrects[i - 1]}
         <span class="wrong">{answers[i - 1]}</span>
       {/if}
-      <span class="correct">{question.answers[i - 1]}</span>
+      <span class="correct">{$currentQuestion.answers[i - 1]}</span>
     {/if}
-    {sentence}
+    {s}
   {/each}
 </p>
 

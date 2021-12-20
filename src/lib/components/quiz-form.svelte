@@ -1,11 +1,9 @@
 <script lang="ts">
-  import type { Question } from '$lib/utils/questions';
+  import { currentQuestion } from '$lib/stores/questions';
 
   import { createEventDispatcher } from 'svelte';
 
-  export let question: Question;
   let answers: string[] = [];
-  let sentences = question.title.split('###');
 
   const dispatch = createEventDispatcher<{ submit: string[] }>();
 
@@ -15,14 +13,14 @@
 </script>
 
 <form on:submit|preventDefault={submit}>
-  <p>{question.subtitle}</p>
+  <p>{$currentQuestion.subtitle}</p>
 
   <p>
-    {#each sentences as sentence, i}
+    {#each $currentQuestion.separatedTitle as s, i}
       {#if i > 0}
         <input type="text" name="answer[]" placeholder={`(${i})`} bind:value={answers[i - 1]} />
       {/if}
-      {sentence}
+      {s}
     {/each}
   </p>
 
