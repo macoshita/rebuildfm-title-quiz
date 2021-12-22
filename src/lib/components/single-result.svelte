@@ -1,10 +1,11 @@
 <script lang="ts">
-  import { currentQuestion } from '$lib/stores/questions';
+  import type { Answer, Question } from '$lib/stores/questions';
 
-  export let answers: string[];
+  export let question: Question;
+  export let answer: Answer;
 
-  $: corrects = $currentQuestion.answers.map(
-    (s, i) => s.toLowerCase() === answers[i]?.trim().toLowerCase()
+  $: corrects = question.corrects.map(
+    (s, i) => s.toLowerCase() === answer.inputs[i]?.trim().toLowerCase()
   );
   $: correctAll = corrects.every(Boolean);
 </script>
@@ -15,25 +16,25 @@
   <p class="wrong">Wrong...</p>
 {/if}
 
-<p>{$currentQuestion.subtitle}</p>
+<p>{question.subtitle}</p>
 
 <p>
-  {#each $currentQuestion.separatedTitle as s, i}
+  {#each question.separatedTitle as s, i}
     {#if i > 0}
       {#if !corrects[i - 1]}
-        <span class="wrong">{answers[i - 1]}</span>
+        <span class="wrong-word">{answer.inputs[i - 1]}</span>
       {/if}
-      <span class="correct">{$currentQuestion.answers[i - 1]}</span>
+      <span class="correct-word">{question.corrects[i - 1]}</span>
     {/if}
     {s}
   {/each}
 </p>
 
 <style>
-  .correct {
+  .correct-word {
     color: green;
   }
-  .wrong {
+  .wrong-word {
     color: red;
     text-decoration: line-through;
   }

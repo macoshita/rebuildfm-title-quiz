@@ -1,27 +1,27 @@
 <script lang="ts">
-  import { initPlay, questions, step } from '$lib/stores/questions';
+  import { answers, initPlay, questions } from '$lib/stores/questions';
   import type { Scene } from 'src/routes/index.svelte';
   import QuizForm from '$lib/components/quiz-form.svelte';
   import SingleResult from '$lib/components/single-result.svelte';
 
-  const QUESTION_LENGTH = 5;
-
   export let scene: Scene;
 
-  let answers: string[] | undefined;
+  const QUESTION_LENGTH = 5;
 
   let init: Promise<void> = initPlay(QUESTION_LENGTH);
+  let step = 1;
+  $: question = $questions[step - 1];
+  $: answer = $answers[step - 1];
 
   async function submit(event: CustomEvent<string[]>) {
-    answers = event.detail;
+    answer.inputs = event.detail;
   }
 
   function next() {
-    answers = undefined;
-    if ($step === $questions.length) {
+    if (step === $questions.length) {
       scene = 'result';
     } else {
-      step.update((s) => s + 1);
+      step++;
     }
   }
 </script>
@@ -29,15 +29,15 @@
 {#await init}
   loading...
 {:then}
-  {#key `step-${$step}`}
-    {#if answers}
-      <SingleResult {answers} />
+  {#key `step-${step}`}
+    {#if answer.inputs}
+      <SingleResult {question} {answer} />
 
       <button type="button" on:click={next}>Next</button>
     {:else}
-      <QuizForm on:submit={submit} />
+      <QuizForm {question} on:submit={submit} />
     {/if}
   {/key}
 
-  <p>{$step} / {$questions.length}</p>
+  <p>{step} / {$questions.length}</p>
 {/await}
