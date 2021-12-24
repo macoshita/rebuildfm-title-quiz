@@ -1,43 +1,36 @@
 <script lang="ts">
-  import { answers, initPlay, questions } from '$lib/stores/questions';
+  import { initPlay, questions, setResults } from '$lib/stores/questions';
   import type { Scene } from 'src/routes/index.svelte';
   import QuizForm from '$lib/components/quiz-form.svelte';
-  import SingleResult from '$lib/components/single-result.svelte';
+  import Paper from '$lib/components/paper.svelte';
+  import Button from '$lib/components/button.svelte';
 
   export let scene: Scene;
 
   const QUESTION_LENGTH = 5;
 
   let init: Promise<void> = initPlay(QUESTION_LENGTH);
-  let step = 1;
-  $: question = $questions[step - 1];
-  $: answer = $answers[step - 1];
 
-  async function submit(event: CustomEvent<string[]>) {
-    answer.inputs = event.detail;
-  }
-
-  function next() {
-    if (step === $questions.length) {
-      scene = 'result';
-    } else {
-      step++;
-    }
+  function submit() {
+    setResults();
+    scene = 'result';
   }
 </script>
 
-{#await init}
-  loading...
-{:then}
-  {#key `step-${step}`}
-    {#if answer.inputs}
-      <SingleResult {question} {answer} />
+{#await init then}
+  <Paper>
+    <h1 class="text-xl mb-10 underline decoration-dotted decoration-1 font-bold">
+      以下の各エピソードの概要を読み、空欄に当てはまる英単語を記入せよ。
+    </h1>
 
-      <button type="button" on:click={next}>Next</button>
-    {:else}
-      <QuizForm {question} on:submit={submit} />
-    {/if}
-  {/key}
+    {#each $questions as question}
+      <div class="mb-10">
+        <QuizForm {question} />
+      </div>
+    {/each}
 
-  <p>{step} / {$questions.length}</p>
+    <div class="text-center">
+      <Button on:click={submit}>回答する</Button>
+    </div>
+  </Paper>
 {/await}

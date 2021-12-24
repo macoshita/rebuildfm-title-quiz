@@ -1,41 +1,40 @@
 <script lang="ts">
-  import type { Answer, Question } from '$lib/stores/questions';
+  import type { Question } from '$lib/stores/questions';
 
   export let question: Question;
-  export let answer: Answer;
-
-  $: corrects = question.corrects.map(
-    (s, i) => s.toLowerCase() === answer.inputs[i]?.trim().toLowerCase()
-  );
-  $: correctAll = corrects.every(Boolean);
 </script>
 
-{#if correctAll}
-  <p class="correct">Correct!</p>
-{:else}
-  <p class="wrong">Wrong...</p>
-{/if}
+<section>
+  <h2 class="mb-4">
+    <div class="text-sm">Ep.{question.episode}</div>
+    <div class="font-bold">{question.subtitle}</div>
+  </h2>
 
-<p>{question.subtitle}</p>
-
-<p>
-  {#each question.separatedTitle as s, i}
-    {#if i > 0}
-      {#if !corrects[i - 1]}
-        <span class="wrong-word">{answer.inputs[i - 1]}</span>
-      {/if}
-      <span class="correct-word">{question.corrects[i - 1]}</span>
-    {/if}
-    {s}
-  {/each}
-</p>
-
-<style>
-  .correct-word {
-    color: green;
-  }
-  .wrong-word {
-    color: red;
-    text-decoration: line-through;
-  }
-</style>
+  <div class="flex items-baseline gap-x-1">
+    <div>A.</div>
+    <div class="flex items-baseline gap-x-1">
+      {#each question.separatedTitle as s, i}
+        {#if i > 0}
+          <div class="text-center">
+            <input
+              class="bg-transparent border-b-2 w-24 px-2 {question.results[i - 1]
+                ? 'text-green-700'
+                : 'text-red-500'}"
+              type="text"
+              name="input[]"
+              placeholder={`(${i})`}
+              value={question.inputs[i - 1]}
+              readonly
+            />
+            {#if !question.results[i - 1]}
+              <div class="text-green-700 -mt-1">
+                {question.corrects[i - 1]}
+              </div>
+            {/if}
+          </div>
+        {/if}
+        {s}
+      {/each}
+    </div>
+  </div>
+</section>

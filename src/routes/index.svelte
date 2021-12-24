@@ -5,6 +5,7 @@
 <script lang="ts">
   import TitleScreen from '$lib/screens/title.svelte';
   import PlayScreen from '$lib/screens/play.svelte';
+  import ResultScreen from '$lib/screens/result.svelte';
 
   let scene: Scene = 'title';
 </script>
@@ -14,5 +15,5 @@
 {:else if scene === 'play'}
   <PlayScreen bind:scene />
 {:else if scene === 'result'}
-  fuga
+  <ResultScreen bind:scene />
 {/if}

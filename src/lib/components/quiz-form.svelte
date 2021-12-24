@@ -1,29 +1,30 @@
 <script lang="ts">
   import type { Question } from '$lib/stores/questions';
 
-  import { createEventDispatcher } from 'svelte';
-
   export let question: Question;
-  let inputs: string[] = question.separatedTitle.map(() => '');
-
-  const dispatch = createEventDispatcher<{ submit: string[] }>();
-
-  function submit() {
-    dispatch('submit', inputs);
-  }
 </script>
 
-<form on:submit|preventDefault={submit}>
-  <p>{question.subtitle}</p>
+<section>
+  <h2 class="mb-4">
+    <div class="text-sm">Ep.{question.episode}</div>
+    <div class="font-bold">{question.subtitle}</div>
+  </h2>
 
-  <p>
-    {#each question.separatedTitle as s, i}
-      {#if i > 0}
-        <input type="text" name="input[]" placeholder={`(${i})`} bind:value={inputs[i - 1]} />
-      {/if}
-      {s}
-    {/each}
-  </p>
-
-  <button type="submit">Answer</button>
-</form>
+  <div class="flex items-baseline gap-x-1">
+    <div>A.</div>
+    <div>
+      {#each question.separatedTitle as s, i}
+        {#if i > 0}
+          <input
+            class="bg-transparent border-b-2 w-24 px-2"
+            type="text"
+            name="input[]"
+            placeholder={`(${i})`}
+            bind:value={question.inputs[i - 1]}
+          />
+        {/if}
+        {s}
+      {/each}
+    </div>
+  </div>
+</section>
