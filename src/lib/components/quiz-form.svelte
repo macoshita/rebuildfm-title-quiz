@@ -3,8 +3,9 @@
   import QuizFormInput from './quiz-form-input.svelte';
 
   export let question: Question;
+  export let results: boolean[] | undefined = undefined;
 
-  $: answered = typeof question.results !== 'undefined';
+  $: answered = typeof results !== 'undefined';
 </script>
 
 <section>
@@ -20,7 +21,7 @@
         {#if i > 0}
           <div>
             <QuizFormInput
-              result={answered ? question.results[i - 1] : undefined}
+              result={answered ? results[i - 1] : undefined}
               placeholder={`(${i})`}
               bind:value={question.inputs[i - 1]}
             />

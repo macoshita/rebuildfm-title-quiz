@@ -3,14 +3,17 @@
   import Paper from '$lib/components/paper.svelte';
   import QuizForm from '$lib/components/quiz-form.svelte';
   import ScoreBox from '$lib/components/score-box.svelte';
-  import SingleResult from '$lib/components/single-result.svelte';
   import { questions, scene } from '$lib/stores/questions';
   import { fade } from 'svelte/transition';
 
+  $: allResults = $questions.map((q) =>
+    q.corrects.map((s, i) => s.toLowerCase() === q.inputs[i].trim().toLowerCase())
+  );
+
   const oneScore = 100 / $questions.length;
 
-  $: score = $questions.reduce(
-    (score, question) => score + (question.results.every(Boolean) ? oneScore : 0),
+  $: score = allResults.reduce(
+    (score, results) => score + (results.every(Boolean) ? oneScore : 0),
     0
   );
 
@@ -28,7 +31,7 @@
 
   {#each $questions as question, i}
     <div class="mb-8" in:fade={{ delay: 1000 * (i + 1) }}>
-      <QuizForm {question} />
+      <QuizForm {question} results={allResults[i]} />
     </div>
   {/each}
 

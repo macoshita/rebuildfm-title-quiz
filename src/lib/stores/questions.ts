@@ -8,7 +8,6 @@ export interface Question {
   corrects: string[];
   separatedTitle: string[];
   inputs?: string[];
-  results?: boolean[];
 }
 
 export const questions = writable<Question[]>([]);
@@ -25,15 +24,6 @@ export const initPlay = async (questionSize: number): Promise<void> => {
   });
 
   questions.set(qs);
-};
-
-export const setResults = (): void => {
-  questions.update((qs) => {
-    qs.forEach((q) => {
-      q.results = q.corrects.map((s, i) => s.toLowerCase() === q.inputs[i]?.trim().toLowerCase());
-    });
-    return qs;
-  });
 };
 
 export const scene = writable<'title' | 'play' | 'result'>('title');
