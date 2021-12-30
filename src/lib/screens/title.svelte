@@ -1,7 +1,7 @@
 <script lang="ts">
   import Paper from '$lib/components/paper.svelte';
   import Button from '$lib/components/button.svelte';
-  import { scene } from '$lib/stores/questions';
+  import { scene } from '$lib/stores';
 
   function start() {
     scene.set('play');

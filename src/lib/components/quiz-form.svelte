@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Question } from '$lib/stores/questions';
+  import type { Question } from '$lib/stores';
   import QuizFormInput from './quiz-form-input.svelte';
 
   export let question: Question;

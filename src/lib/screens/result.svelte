@@ -3,7 +3,7 @@
   import Paper from '$lib/components/paper.svelte';
   import QuizForm from '$lib/components/quiz-form.svelte';
   import ScoreBox from '$lib/components/score-box.svelte';
-  import { questions, scene } from '$lib/stores/questions';
+  import { questions, scene } from '$lib/stores';
   import { fade } from 'svelte/transition';
 
   $: allResults = $questions.map((q) =>

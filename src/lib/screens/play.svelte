@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { initPlay, questions, scene } from '$lib/stores/questions';
+  import { initPlay, questions, scene } from '$lib/stores';
   import QuizForm from '$lib/components/quiz-form.svelte';
   import Paper from '$lib/components/paper.svelte';
   import Button from '$lib/components/button.svelte';
