@@ -3,8 +3,11 @@ const config = {
 
   theme: {
     extend: {
+      colors: {
+        twitter: '#1DA1F2'
+      },
       aspectRatio: {
-        'a4': '1 / 1.4142',
+        a4: '1 / 1.4142'
       }
     }
   },

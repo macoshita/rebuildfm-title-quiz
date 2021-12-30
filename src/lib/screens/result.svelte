@@ -3,6 +3,7 @@
   import Paper from '$lib/components/paper.svelte';
   import QuizForm from '$lib/components/quiz-form.svelte';
   import ScoreBox from '$lib/components/score-box.svelte';
+  import TweetButton from '$lib/components/tweet-button.svelte';
   import { questions, scene } from '$lib/stores';
   import { fade } from 'svelte/transition';
 
@@ -22,10 +23,6 @@
   }
 </script>
 
-<svelte:head>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</svelte:head>
-
 <Paper>
   <h1 class="text-xl mb-10 underline decoration-dotted decoration-1 font-bold">Result</h1>
 
@@ -38,12 +35,11 @@
   <div class="flex flex-col items-center gap-4" in:fade={{ delay: 1000 * ($questions.length + 1) }}>
     <ScoreBox {score} />
 
-    <a
-      href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-      class="twitter-share-button"
-      data-size="large"
-      data-show-count="false">Tweet</a
-    >
+    <TweetButton
+      text="Rebuildfm タイトル当てクイズで {score} 点でした"
+      url={location.href}
+      hashtags="Rebuildfmタイトル当てクイズ"
+    />
 
     <Button on:click={next}>もう一度</Button>
   </div>
