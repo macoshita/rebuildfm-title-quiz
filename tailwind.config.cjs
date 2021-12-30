@@ -2,7 +2,11 @@ const config = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
 
   theme: {
-    extend: {}
+    extend: {
+      aspectRatio: {
+        'a4': '1 / 1.4142',
+      }
+    }
   },
 
   plugins: []

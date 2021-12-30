@@ -1,11 +1,8 @@
 <script lang="ts">
-  import { initPlay, questions, setResults } from '$lib/stores/questions';
-  import type { Scene } from 'src/routes/index.svelte';
+  import { initPlay, questions, scene, setResults } from '$lib/stores/questions';
   import QuizForm from '$lib/components/quiz-form.svelte';
   import Paper from '$lib/components/paper.svelte';
   import Button from '$lib/components/button.svelte';
-
-  export let scene: Scene;
 
   const QUESTION_LENGTH = 5;
 
@@ -13,7 +10,7 @@
 
   function submit() {
     setResults();
-    scene = 'result';
+    scene.set('result');
   }
 </script>
 

@@ -35,3 +35,5 @@ export const setResults = (): void => {
     return qs;
   });
 };
+
+export const scene = writable<'title' | 'play' | 'result'>('title');

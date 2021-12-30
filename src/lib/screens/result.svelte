@@ -1,18 +1,47 @@
 <script lang="ts">
   import Button from '$lib/components/button.svelte';
-
   import Paper from '$lib/components/paper.svelte';
+  import QuizForm from '$lib/components/quiz-form.svelte';
+  import ScoreBox from '$lib/components/score-box.svelte';
   import SingleResult from '$lib/components/single-result.svelte';
-  import { questions } from '$lib/stores/questions';
-  import type { Scene } from 'src/routes/index.svelte';
+  import { questions, scene } from '$lib/stores/questions';
+  import { fade } from 'svelte/transition';
 
-  export let scene: Scene;
+  const oneScore = 100 / $questions.length;
+
+  $: score = $questions.reduce(
+    (score, question) => score + (question.results.every(Boolean) ? oneScore : 0),
+    0
+  );
+
+  function next() {
+    scene.set('title');
+  }
 </script>
 
-<Paper>
-  <h2>Result</h2>
+<svelte:head>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</svelte:head>
 
-  {#each $questions as question}
-    <SingleResult {question} />
+<Paper>
+  <h1 class="text-xl mb-10 underline decoration-dotted decoration-1 font-bold">Result</h1>
+
+  {#each $questions as question, i}
+    <div class="mb-8" in:fade={{ delay: 1000 * (i + 1) }}>
+      <QuizForm {question} />
+    </div>
   {/each}
+
+  <div class="flex flex-col items-center gap-4" in:fade={{ delay: 1000 * ($questions.length + 1) }}>
+    <ScoreBox {score} />
+
+    <a
+      href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+      class="twitter-share-button"
+      data-size="large"
+      data-show-count="false">Tweet</a
+    >
+
+    <Button on:click={next}>もう一度</Button>
+  </div>
 </Paper>
