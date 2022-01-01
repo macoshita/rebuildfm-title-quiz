@@ -2,13 +2,19 @@
   import { fly } from 'svelte/transition';
 
   let flying = false;
+  let className = '';
 
-  const OUTRO_DURATION = 750;
+  export { className as class };
+
+  const duration = 750;
 
   function introstart() {
     setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, OUTRO_DURATION);
+      window.scroll({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }, duration);
   }
 
   function outrostart() {
@@ -17,15 +23,15 @@
 </script>
 
 <div
-  class="w-screen flex justify-center"
+  class="flex justify-center"
   class:flying
-  in:fly={{ y: 32, duration: 1000, delay: OUTRO_DURATION }}
-  out:fly={{ y: -32, duration: OUTRO_DURATION }}
+  in:fly={{ y: -32, duration, delay: duration }}
+  out:fly={{ y: -32, duration }}
   on:introstart={introstart}
   on:outrostart={outrostart}
 >
   <div
-    class="w-full max-w-screen-md mx-8 my-16 p-4 md:p-8 text-slate-600 bg-slate-50 border border-slate-200 aspect-a4"
+    class="drop-shadow-md w-full max-w-screen-md mx-8 my-16 p-4 md:p-8 text-slate-600 bg-slate-50 border border-slate-200 aspect-a4 {className}"
   >
     <slot />
   </div>

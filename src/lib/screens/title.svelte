@@ -8,11 +8,9 @@
   }
 </script>
 
-<Paper>
-  <div class="text-center">
-    <h1 class="mb-10 font-bold antialiased text-3xl">
-      Rebuild.fm <span class="whitespace-nowrap">Title Test</span>
-    </h1>
-    <Button on:click={start}>開始</Button>
-  </div>
+<Paper class="text-3xl md:text-5xl text-center">
+  <h1 class="font-bold leading-relaxed my-8">
+    Rebuild.fm<br />タイトルクイズ
+  </h1>
+  <Button on:click={start}>開始</Button>
 </Paper>

@@ -27,18 +27,16 @@
   <h1 class="text-xl mb-10 underline decoration-dotted decoration-1 font-bold">Result</h1>
 
   {#each $questions as question, i}
-    <div class="mb-8" in:fade={{ delay: 1000 * (i + 1) }}>
-      <QuizForm {question} results={allResults[i]} />
-    </div>
+    <QuizForm class="mb-8" {question} results={allResults[i]} delay={750 + 1000 * (i + 1)} />
   {/each}
 
-  <div class="flex flex-col items-center gap-4" in:fade={{ delay: 1000 * ($questions.length + 1) }}>
+  <div class="flex flex-col items-center gap-4">
     <ScoreBox {score} />
 
     <TweetButton
-      text="Rebuildfm タイトル当てクイズで {score} 点でした"
+      text="Rebuildfm タイトルクイズで {score} 点でした"
       url={location.href}
-      hashtags="Rebuildfmタイトル当てクイズ"
+      hashtags="Rebuildfmタイトルクイズ"
     />
 
     <Button on:click={next}>もう一度</Button>
