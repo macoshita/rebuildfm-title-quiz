@@ -32,7 +32,7 @@
   on:outrostart={outrostart}
 >
   <div
-    class="drop-shadow-md w-full max-w-screen-md mx-8 my-16 p-4 md:p-8 text-slate-600 bg-slate-50 border border-slate-200 {className}"
+    class="drop-shadow-md w-full max-w-screen-md mx-8 my-16 p-4 md:p-8 text-zinc-600 bg-zinc-50 border border-zinc-200 {className}"
   >
     <slot />
   </div>

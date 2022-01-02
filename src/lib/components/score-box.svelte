@@ -33,7 +33,7 @@
       : 'text-red-700';
 </script>
 
-<div class="relative flex border-2 border-slate-300 w-48 px-2 py-1 items-baseline {className}">
+<div class="relative flex border-2 border-zinc-300 w-48 px-2 py-1 items-baseline {className}">
   {#if $displayScore === score}
     <div
       class="stamp absolute -top-5 -right-10 rotate-12 text-4xl tracking-tighter {scoreColor}"
