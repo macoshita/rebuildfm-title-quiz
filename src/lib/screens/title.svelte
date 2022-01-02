@@ -8,8 +8,8 @@
   }
 </script>
 
-<Paper class="text-3xl md:text-5xl text-center">
-  <h1 class="font-bold leading-relaxed my-8">
+<Paper class="text-3xl md:text-5xl text-center py-12">
+  <h1 class="font-bold leading-relaxed mb-8">
     Rebuild.fm<br />タイトルクイズ
   </h1>
   <Button on:click={start}>開始</Button>

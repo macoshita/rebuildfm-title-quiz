@@ -24,21 +24,19 @@
 </script>
 
 <Paper>
-  <h1 class="text-xl mb-10 underline decoration-dotted decoration-1 font-bold">Result</h1>
+  <h1 class="text-3xl mb-8 underline decoration-dotted decoration-1 font-bold">Result</h1>
+
+  <ScoreBox class="mb-8 mx-auto" {score} />
 
   {#each $questions as question, i}
-    <QuizForm class="mb-8" {question} results={allResults[i]} delay={750 + 1000 * (i + 1)} />
+    <QuizForm class="mb-8" {question} results={allResults[i]} />
   {/each}
 
-  <div class="flex flex-col items-center gap-4">
-    <ScoreBox {score} />
+  <TweetButton
+    class="mx-auto mb-4"
+    text="#Rebuildfmタイトルクイズ で {score} 点でした"
+    url={location.href}
+  />
 
-    <TweetButton
-      text="Rebuildfm タイトルクイズで {score} 点でした"
-      url={location.href}
-      hashtags="Rebuildfmタイトルクイズ"
-    />
-
-    <Button on:click={next}>もう一度</Button>
-  </div>
+  <Button class="block mx-auto" on:click={next}>もう一度</Button>
 </Paper>

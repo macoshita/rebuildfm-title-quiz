@@ -1,12 +1,13 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
+  import { PAPER_ANIMATION_DURATION } from '$lib/consts';
 
   let flying = false;
   let className = '';
 
   export { className as class };
 
-  const duration = 750;
+  const duration = PAPER_ANIMATION_DURATION;
 
   function introstart() {
     setTimeout(() => {
@@ -31,7 +32,7 @@
   on:outrostart={outrostart}
 >
   <div
-    class="drop-shadow-md w-full max-w-screen-md mx-8 my-16 p-4 md:p-8 text-slate-600 bg-slate-50 border border-slate-200 aspect-a4 {className}"
+    class="drop-shadow-md w-full max-w-screen-md mx-8 my-16 p-4 md:p-8 text-slate-600 bg-slate-50 border border-slate-200 {className}"
   >
     <slot />
   </div>

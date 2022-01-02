@@ -1,4 +1,10 @@
+<script lang="ts">
+  let className = '';
+  export { className as class };
+</script>
+
 <svg
+  class={className}
   version="1.1"
   id="Logo"
   xmlns="http://www.w3.org/2000/svg"

@@ -1,25 +1,30 @@
 <script lang="ts">
+  import Button from './button.svelte';
   import TwitterLogo from './twitter-logo.svelte';
 
-  export let text: string;
-  export let url: string;
-  export let hashtags: string;
+  let className = '';
+  export { className as class };
+  export let text: string | undefined = undefined;
+  export let url: string | undefined = undefined;
+  export let hashtags: string | undefined = undefined;
 
-  $: query = new URLSearchParams([
-    ['text', text],
-    ['url', url],
-    ['hashtags', hashtags]
-  ]);
+  $: query = new URLSearchParams(
+    [
+      ['text', text],
+      ['url', url],
+      ['hashtags', hashtags]
+    ].filter((x) => x[1] !== undefined)
+  );
+
+  function open() {
+    window.open(`https://twitter.com/intent/tweet?${query}`, '_blank', 'noreferrer');
+  }
 </script>
 
-<a
-  class="bg-twitter text-white text-xl px-8 py-2 flex items-center gap-1"
-  href="https://twitter.com/intent/tweet?{query}"
-  target="_blank"
-  rel="noopener noreferrer"
+<Button
+  class="bg-twitter text-white hover:bg-twitter/50 active:bg-twitter/50 flex items-center gap-1 {className}"
+  on:click={open}
 >
-  <div class="w-8">
-    <TwitterLogo />
-  </div>
+  <TwitterLogo class="w-8 inline" />
   ツイートする
-</a>
+</Button>
