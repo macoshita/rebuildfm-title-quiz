@@ -14,7 +14,7 @@
 
 <input
   class="bg-transparent border-b-2 w-24 px-2 {color}"
-  type="text"
+  type="email"
   name="input[]"
   {placeholder}
   bind:value
