@@ -1,0 +1,13 @@
+{
+  "name": "quiz-gen",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "download-questions": "node download-questions.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rss-parser": "^3.12.0"
+  }
+}

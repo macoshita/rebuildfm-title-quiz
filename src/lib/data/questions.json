@@ -1,38 +1,448 @@
 [
   {
+    "episode": 326,
+    "title": "Hand-Squeezed ### Juice (hak)",
+    "link": "https://rebuild.fm/326/",
+    "corrects": [
+      "Apple"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、MacBook Pro, CES, チップ、Pixel 6, Android 12, PS5 などについて話しました。"
+  },
+  {
+    "episode": 325,
+    "title": "The 7-Day ### Week (naan)",
+    "link": "https://rebuild.fm/325/",
+    "corrects": [
+      "Work"
+    ],
+    "subtitle": "Kazuho Okui さんをゲストに迎えて、COVID-19, MacBook Pro, サバティカルなどについて話しました。"
+  },
+  {
     "episode": 323,
     "title": "Metaverse and ### (hak)",
-    "corrects": ["Chill"],
+    "link": "https://rebuild.fm/323/",
+    "corrects": [
+      "Chill"
+    ],
     "subtitle": "Hakuro Matsuda さんをゲストに迎えて、メタバース、チップ、Pixel 6 Pro, MacBook Pro などについて話しました。"
   },
   {
     "episode": 322,
     "title": "Dialog with the ### (yuka)",
-    "corrects": ["Algorithm"],
+    "link": "https://rebuild.fm/322/",
+    "corrects": [
+      "Algorithm"
+    ],
     "subtitle": "Yuka Ohishi さんをゲストに迎えて、MacBook Pro, Twitter Blue, YouTube, 一時帰国、Apple TV+ などについて話しました。"
   },
   {
     "episode": 321,
     "title": "Socially Distanced ### ### (kenn)",
-    "corrects": ["Menu", "Bar"],
+    "link": "https://rebuild.fm/321/",
+    "corrects": [
+      "Menu",
+      "Bar"
+    ],
     "subtitle": "Kenn Ejima さんをゲストに迎えて、MacBook Pro, Meta, Copilot, ビッグテックなどについて話しました。"
   },
   {
     "episode": 320,
-    "title": "### ### Chart (hak)",
-    "corrects": ["Jeff", "Bezos"],
+    "title": "Jeff Bezos ### (hak)",
+    "link": "https://rebuild.fm/320/",
+    "corrects": [
+      "Chart"
+    ],
     "subtitle": "Hakuro Matsuda さんをゲストに迎えて、Apple イベント、MacBook Pro, Pixel 6 などについて話しました。"
   },
   {
     "episode": 319,
     "title": "### Podcasting (N)",
-    "corrects": ["Improvised"],
+    "link": "https://rebuild.fm/319/",
+    "corrects": [
+      "Improvised"
+    ],
     "subtitle": "Naoki Hiroshima さんをゲストに迎えて、MacBook Pro, ニューヨーク、ビッグテック、Apple Watch, iPhone 13 Pro などについて話しました。"
   },
   {
     "episode": 318,
     "title": "### Todo List (naan)",
-    "corrects": ["Evergreen"],
+    "link": "https://rebuild.fm/318/",
+    "corrects": [
+      "Evergreen"
+    ],
     "subtitle": "Kazuho Okui さんをゲストに迎えて、近況、Safari 15, iPad, ファイルシステム、Astro, プロダクティビティ、カフェインなどについて話しました。"
+  },
+  {
+    "episode": 317,
+    "title": "See You In ### (hak)",
+    "link": "https://rebuild.fm/317/",
+    "corrects": [
+      "Court"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、Apple イベント、iPad mini, iPhone 13, Wise などについて話しました。"
+  },
+  {
+    "episode": 316,
+    "title": "### ### Camcorder (N)",
+    "link": "https://rebuild.fm/316/",
+    "corrects": [
+      "Domestic",
+      "Violence"
+    ],
+    "subtitle": "Naoki Hiroshima さんをゲストに迎えて、9/11, Apple, 将棋、デバッグなどについて話しました。"
+  },
+  {
+    "episode": 315,
+    "title": "Our ### Doesn't Like Your Voice Service (higepon)",
+    "link": "https://rebuild.fm/315/",
+    "corrects": [
+      "Bank"
+    ],
+    "subtitle": "Taro Minowa さんをゲストに迎えて、学校、Apple, プロダクティビティ、数学、1Password などについて話しました。"
+  },
+  {
+    "episode": 314,
+    "title": "Takeda Shingen of ### ### (hak)",
+    "link": "https://rebuild.fm/314/",
+    "corrects": [
+      "Silicon",
+      "Valley"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、Intel, Google Pixel 6, Apple, CEDEC, ゲーム、映画などについて話しました。"
+  },
+  {
+    "episode": 312,
+    "title": "### in the Box (kansai_takako)",
+    "link": "https://rebuild.fm/312/",
+    "corrects": [
+      "Face"
+    ],
+    "subtitle": "閑歳孝子さんをゲストに迎えて、パンデミック、旅行、将棋、mixi, マンガなどについて話しました。"
+  },
+  {
+    "episode": 311,
+    "title": "But I Don't Eat ### (N)",
+    "link": "https://rebuild.fm/311/",
+    "corrects": [
+      "Sugar"
+    ],
+    "subtitle": "Naoki Hiroshima さんをゲストに迎えて、COVID-19、オリンピック、Twitter, iCloud Private Relay, YouTube, iOS 15 などについて話しました。"
+  },
+  {
+    "episode": 310,
+    "title": "Software Is Not ### (hak)",
+    "link": "https://rebuild.fm/310/",
+    "corrects": [
+      "Real"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、GitHub Copilot, Apple Pencil 2, Chromecast, Switch, Steam Deck, 電気工事士、ゴジラSP などについて話しました。"
+  },
+  {
+    "episode": 309,
+    "title": "Museum of ### (kohsuke)",
+    "link": "https://rebuild.fm/309/",
+    "corrects": [
+      "Unicode"
+    ],
+    "subtitle": "Kohsuke Kawaguchi さんをゲストに迎えて、起業、パンデミック、エンジニアリング、ナラティブなどについて話しました。"
+  },
+  {
+    "episode": 308,
+    "title": "Integration Test ### (higepon)",
+    "link": "https://rebuild.fm/308/",
+    "corrects": [
+      "Email"
+    ],
+    "subtitle": "Taro Minowa さんをゲストに迎えて、Notion, Craft, Apple Music, テスト、LLC などについて話しました。"
+  },
+  {
+    "episode": 307,
+    "title": "### Particles (hak)",
+    "link": "https://rebuild.fm/307/",
+    "corrects": [
+      "Unreal"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、WWDC, iOS 15, macOS Monterey などについて話しました。"
+  },
+  {
+    "episode": 306,
+    "title": "Complaining ### (takoratta)",
+    "link": "https://rebuild.fm/306/",
+    "corrects": [
+      "Bot"
+    ],
+    "subtitle": "及川卓也さんをゲストに迎えて、リモートワーク、カンファレンス、Google I/O, Build などについて話しました。"
+  },
+  {
+    "episode": 305,
+    "title": "### vs. ### (hak)",
+    "link": "https://rebuild.fm/305/",
+    "corrects": [
+      "Tim",
+      "Tim"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、ワクチン、Google I/O, Android 12, iPad Pro, Apple TV, Apple vs. Epic などについて話しました。"
+  },
+  {
+    "episode": 304,
+    "title": "### Is More Than Just a Game (N)",
+    "link": "https://rebuild.fm/304/",
+    "corrects": [
+      "Zelda"
+    ],
+    "subtitle": "Naoki Hiroshima さんをゲストに迎えて、ワクチン、Apple TV, Basecamp, App Tracking Transparency などについて話しました。"
+  },
+  {
+    "episode": 303,
+    "title": "California Roll ### (hak)",
+    "link": "https://rebuild.fm/303/",
+    "corrects": [
+      "Screen"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、Apple Podcasts Subscription, iMac, iPad Pro などについて話しました。"
+  },
+  {
+    "episode": 302,
+    "title": "Speculative ### (hak)",
+    "link": "https://rebuild.fm/302/",
+    "corrects": [
+      "Life"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、チップ、キーボード、ブロックチェーン、マンガ、映画、AI などについて話しました。"
+  },
+  {
+    "episode": 301,
+    "title": "Science of ### (higepon)",
+    "link": "https://rebuild.fm/301/",
+    "corrects": [
+      "Happiness"
+    ],
+    "subtitle": "Taro Minowa さんをゲストに迎えて、 Well-being, 面接、Amazon プライム、Apple Arcade などについて話しました。"
+  },
+  {
+    "episode": 300,
+    "title": "Note-Taking ### (omo)",
+    "link": "https://rebuild.fm/300/",
+    "corrects": [
+      "Nirvana"
+    ],
+    "subtitle": "Hajime Morita さんをゲストに迎えて、ポッドキャスト、雑談ブログ、ノートテイキングなどについて話しました。"
+  },
+  {
+    "episode": 299,
+    "title": "H1 ### (yuka)",
+    "link": "https://rebuild.fm/299/",
+    "corrects": [
+      "Perfectionist"
+    ],
+    "subtitle": "Yuka Ohishi さんをゲストに迎えて、Twitter, メンバーシップ、プロジェクター、パラサイト、グラミー賞、Notion などについて話しました。"
+  },
+  {
+    "episode": 298,
+    "title": "Functional Programming Is the ### (naan)",
+    "link": "https://rebuild.fm/298/",
+    "corrects": [
+      "Future"
+    ],
+    "subtitle": "Kazuho Okui さんをゲストに迎えて、ポッドキャスト、ニューヨーク暮らし、写真アプリ、ニュース、Hotwire などについて話しました。"
+  },
+  {
+    "episode": 297,
+    "title": "Too Hot To ### (N)",
+    "link": "https://rebuild.fm/297/",
+    "corrects": [
+      "Handle"
+    ],
+    "subtitle": "Naoki Hiroshima さんをゲストに迎えて、ワクチン、Swift、ライブラリ、ソーシャルメディア、将棋などについて話しました。"
+  },
+  {
+    "episode": 296,
+    "title": "### with Yabumi (fumiakiy)",
+    "link": "https://rebuild.fm/296/",
+    "corrects": [
+      "Boomerang"
+    ],
+    "subtitle": "Fumiaki Yoshimatsu さんをゲストに迎えて、Clubhouse, Stadia, AWS, COCOA などについて話しました。"
+  },
+  {
+    "episode": 292,
+    "title": "Two Chickens, One ### (hak)",
+    "link": "https://rebuild.fm/292/",
+    "corrects": [
+      "Stone"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、Snapdragon 888, Stadia, スマートホーム、cyberpunk 2077 などについて話しました。"
+  },
+  {
+    "episode": 291,
+    "title": "### Crashes Every Morning (typester)",
+    "link": "https://rebuild.fm/291/",
+    "corrects": [
+      "Emacs"
+    ],
+    "subtitle": "Daisuke Murase さんをゲストに迎えて、Pixel 5, M1 Mac mini, キーボード、Cyberpunk 2077,  F1 などについて話しました。"
+  },
+  {
+    "episode": 288,
+    "title": "Unidentified Mysterious ### (hak)",
+    "link": "https://rebuild.fm/288/",
+    "corrects": [
+      "Animal"
+    ],
+    "subtitle": "Hakuro Matusda さんをゲストに迎えて、M1チップ、CPUの歴史、MacBook Air, PS5 などについて話しました。"
+  },
+  {
+    "episode": 286,
+    "title": "### Podcaster (N)",
+    "link": "https://rebuild.fm/286/",
+    "corrects": [
+      "Presidential"
+    ],
+    "subtitle": "Naoki Hiroshima さんをゲストに迎えて、Google, アンチトラスト、iPhone 12 Pro, 大統領選、バイリンガルニュースなどについて話しました。"
+  },
+  {
+    "episode": 284,
+    "title": "### Tower (fumiakiy)",
+    "link": "https://rebuild.fm/284/",
+    "corrects": [
+      "Trump"
+    ],
+    "subtitle": "Fumiaki Yoshimatsu さんをゲストに迎えて、トランプ、Google イベント、Pixel 5, 東証システム障害、韓国ドラマなどについて話しました。"
+  },
+  {
+    "episode": 281,
+    "title": "Touch Bar Doesn't ### (higepon)",
+    "link": "https://rebuild.fm/281/",
+    "corrects": [
+      "Exist"
+    ],
+    "subtitle": "Taro Minowa さんをゲストに迎えて、広島、山火事、睡眠、ドコモ口座、クリアファイル、クラムシェルなどについて話しました。"
+  },
+  {
+    "episode": 280,
+    "title": "Sushi ### (hak)",
+    "link": "https://rebuild.fm/280/",
+    "corrects": [
+      "Tim"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、NAT Traversal, Pixel, Epic, Ghost of Tsushima, デスク、化物語、テレビなどについて話しました。"
+  },
+  {
+    "episode": 276,
+    "title": "The Staff Enjoyed The ### Later (hak)",
+    "link": "https://rebuild.fm/276/",
+    "corrects": [
+      "Sushi"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、Intel, ARM, 中国、GPT-3, Ghost of Tsushima, 日本沈没、ガジェットなどについて話しました。"
+  },
+  {
+    "episode": 271,
+    "title": "### Are Not Required for My Job (Audrey Tang)",
+    "link": "https://rebuild.fm/271/",
+    "corrects": [
+      "Monads"
+    ],
+    "subtitle": "Audrey Tang joins me to talk about COVID-19, her career path, digital minister's job, forking the government, Sci-Fi and so on."
+  },
+  {
+    "episode": 269,
+    "title": "### Haven Islands (N)",
+    "link": "https://rebuild.fm/269/",
+    "corrects": [
+      "Tax"
+    ],
+    "subtitle": "Naoki Hiroshima さんをゲストに迎えて、Shelter In Place, GrubHub, オンライン授業、あつまれどうぶつの森、プロダクティビティなどについて話しました。"
+  },
+  {
+    "episode": 268,
+    "title": "Corrupted ### (hak)",
+    "link": "https://rebuild.fm/268/",
+    "corrects": [
+      "Raccoon"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、どうぶつの森、リモートワーク、納豆作り、iPhone SE 2, FF7 リメイク、Sci-Fi ドラマなどについて話しました。"
+  },
+  {
+    "episode": 222,
+    "title": "UPS Pickup ### (N)",
+    "link": "https://rebuild.fm/222/",
+    "corrects": [
+      "Friendship"
+    ],
+    "subtitle": "Naoki Hiroshima さんをゲストに迎えて、山火事、Amazon, MacBook, iPhone, Netflix, コードレビューなどについて話しました。"
+  },
+  {
+    "episode": 220,
+    "title": "Graceless ### (hak)",
+    "link": "https://rebuild.fm/220/",
+    "corrects": [
+      "Shutdown"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、プレゼン、Pixel 3, Oculus, Adobe MAX などについて話しました。"
+  },
+  {
+    "episode": 218,
+    "title": "### Bento (hak)",
+    "link": "https://rebuild.fm/218/",
+    "corrects": [
+      "Bionic"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、Apple イベント, A12 Bionic, iPhone XS, GTC などについて話しました。"
+  },
+  {
+    "episode": 214,
+    "title": "Can't Escape From ### (basuke)",
+    "link": "https://rebuild.fm/214/",
+    "corrects": [
+      "Perl"
+    ],
+    "subtitle": "Basuke Suzuki さんをゲストに迎えて、Macbook Pro, macOS Mojave, Elm, C++, WebKit などについて話しました。"
+  },
+  {
+    "episode": 212,
+    "title": "Max Speed ### (kosamari)",
+    "link": "https://rebuild.fm/212/",
+    "corrects": [
+      "Tetris"
+    ],
+    "subtitle": "Mariko Kosaka さんをゲストに迎えて、JSConf EU, TC39, オープンソースとサステナビリティ、Coinhive などについて話しました。"
+  },
+  {
+    "episode": 209,
+    "title": "Google Spreadsheet ### Machine (typester)",
+    "link": "https://rebuild.fm/209/",
+    "corrects": [
+      "State"
+    ],
+    "subtitle": "Daisuke Murase さんをゲストに迎えて、スマートスピーカー、Fitbit, Oculus Go, DAZN, ArchLinux などについて話しました。"
+  },
+  {
+    "episode": 204,
+    "title": "Gateway Drugs for ### (hak)",
+    "link": "https://rebuild.fm/204/",
+    "corrects": [
+      "Children"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、GDC, リアルタイムレイトレーシング、iPad, Chromebook, Android P, AMD, Facebook などについて話しました。"
+  },
+  {
+    "episode": 202,
+    "title": "### versus ### (yuka)",
+    "link": "https://rebuild.fm/202/",
+    "corrects": [
+      "AI",
+      "AI"
+    ],
+    "subtitle": "Yuka Ohishi さんをゲストに迎えて、YouTube, ソーシャルメディア、AI、Slack, ダイバーシティ、ポッドキャスティングなどについて話しました。"
+  },
+  {
+    "episode": 200,
+    "title": "Leather Jacket ### (hak)",
+    "link": "https://rebuild.fm/200/",
+    "corrects": [
+      "King"
+    ],
+    "subtitle": "Hakuro Matsuda さんをゲストに迎えて、CES, VR, NVIDIA, Google, Nintendo Labo, iOS 11.3, コインチェックなどについて話しました。"
   }
 ]
